@@ -1,40 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aziz Ramdan Kurniawan</title>
+    <meta
+      name="description"
+      content="Personal website of Aziz Ramdan Kurniawan"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aziz Ramdan Kurniawan</title>
-  <meta name="description" content="Personal website of Aziz Ramdan Kurniawan" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
 
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="./assets/style.css" rel="stylesheet" />
+    <script defer src="./assets/script.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"
+    ></script>
+  </head>
 
-  <link href="./assets/style.css" rel="stylesheet">
-  <script defer src="./assets/script.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
-</head>
+  <body
+    x-data
+    :class="$store.darkMode.on && 'dark'"
+    class="text-[#171717] dark:text-[#fafafa] bg-[#f5f5f5] dark:bg-black"
+  >
+    <header
+      class="border-b-2 py-2 bg-white dark:bg-[#171717] dark:border-[#363636]"
+    >
+      <div
+        class="container mx-auto flex justify-between items-center px-3 lg:px-8 relative"
+      >
+        <button x-data @click="$store.mobileMenu.toggle()" class="md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-menu-2"
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </button>
+        <a href="/">
+          <img
+            src="./assets/arlab-logo.png"
+            alt="ARLab Logo"
+            class="invert dark:invert-0 w-[50px] md:w-[67px]"
+          />
+        </a>
 
-<body x-data :class="$store.darkMode.on && 'dark'" class="text-[#171717] dark:text-[#fafafa] bg-[#f5f5f5] dark:bg-black">
-  <header class="border-b-2 py-2 bg-white dark:bg-[#171717] dark:border-[#363636]">
-    <div class="container mx-auto flex justify-between items-center px-3 lg:px-8 relative">
-      <button x-data @click="$store.mobileMenu.toggle()" class="md:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M4 6l16 0" />
-          <path d="M4 12l16 0" />
-          <path d="M4 18l16 0" />
-        </svg>
-      </button>
-      <a href="/">
-        <img src="./assets/arlab-logo.png" alt="ARLab Logo" class="invert dark:invert-0 w-[50px] md:w-[67px]">
-      </a>
-
-      <nav
-        x-data="{
+        <nav
+          x-data="{
           menus: [
             { name: 'home', href: '#home' },
             { name: 'projects', href: '#projects' },
@@ -43,305 +74,662 @@
             { name: 'contact', href: '#contact' },
           ]
         }"
-        class="md:block absolute md:static top-[60px] md:top-auto bg-white dark:bg-[#171717] md:bg-transparent w-full md:w-auto border-2 dark:border-[#363636] border-t-0 md:border-0 -ml-3 md:ml-0 p-6 md:p-0"
-        :class="$store.mobileMenu.on ? 'block' : 'hidden'"
-      >
-        <ul class="flex flex-col md:flex-row gap-6">
-          <template x-for="menu in menus">
-            <li>
-              <a :href="menu.href" @click="$store.mobileMenu.toggle()" x-text="menu.name" class="block"></a>
-            </li>
-          </template>
-        </ul>
-      </nav>
+          class="md:block absolute md:static top-[60px] md:top-auto bg-white dark:bg-[#171717] md:bg-transparent w-full md:w-auto border-2 dark:border-[#363636] border-t-0 md:border-0 -ml-3 md:ml-0 p-6 md:p-0"
+          :class="$store.mobileMenu.on ? 'block' : 'hidden'"
+        >
+          <ul class="flex flex-col md:flex-row gap-6">
+            <template x-for="menu in menus">
+              <li>
+                <a
+                  :href="menu.href"
+                  @click="$store.mobileMenu.toggle()"
+                  x-text="menu.name"
+                  class="block"
+                ></a>
+              </li>
+            </template>
+          </ul>
+        </nav>
 
-      <div>
-        <button x-data @click="$store.darkMode.toggle()">
-          <template x-data x-if="!$store.darkMode.on">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun-filled" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" stroke-width="0" fill="currentColor" />
-              <path d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z" stroke-width="0" fill="currentColor" />
-              <path d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" stroke-width="0" fill="currentColor" />
-              <path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" stroke-width="0" fill="currentColor" />
-              <path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" stroke-width="0" fill="currentColor" />
-              <path d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z" stroke-width="0" fill="currentColor" />
-              <path d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" stroke-width="0" fill="currentColor" />
-              <path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" stroke-width="0" fill="currentColor" />
-              <path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor" />
-            </svg>
-          </template>
-          <template x-data x-if="$store.darkMode.on">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-filled" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z" stroke-width="0" fill="currentColor" />
-            </svg>
-          </template>
-        </button>
+        <div>
+          <button x-data @click="$store.darkMode.toggle()">
+            <template x-data x-if="!$store.darkMode.on">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-sun-filled"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#2c3e50"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+              </svg>
+            </template>
+            <template x-data x-if="$store.darkMode.on">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-moon-filled"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+              </svg>
+            </template>
+          </button>
+        </div>
       </div>
-    </div>
+    </header>
 
-  </header>
-
-  <main class="container mx-auto px-3 lg:px-8 py-4">
-    <section id="home">
-      <a href="#home">#home</a>
-      <div class="p-6 section-container">
-        <b class="block">Hello World!</b>
-        <p class="mt-5">
-          I'm <b>Aziz Ramdan Kurniawan</b>, a web developer, specializing in building applications using the Laravel and Vue.js ecosystems. I enjoy working with backend and server environments and have a passion for teaching.
-        </p>
-        <p class="mt-5">
-          <a href="mailto:hello@azizramdan.id" class="underline font-bold">Say hello</a>, or keep scrolling.
-        </p>
-      </div>
-    </section>
-
-    <section id="projects" class="mt-16">
-      <a href="#projects">#projects</a>
-      <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container">
-        <div class="lg:col-span-2 xl:col-span-1">
-          <a href="/projects/lidia" class="font-bold underline">Lidia</a>
-          <div class="flex justify-center lg:hidden relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-              <path d="M9 15l-4.5 4.5" />
-              <path d="M14.5 4l5.5 5.5" />
-            </svg>
-            <img src="https://picsum.photos/520/290?random=1" width="520" height="290" alt="" class="my-2 img-container -rotate-2 grayscale">
-          </div>
+    <main class="container mx-auto px-3 lg:px-8 py-4">
+      <section id="home">
+        <a href="#home">#home</a>
+        <div class="p-6 section-container">
+          <b class="block">Hello World!</b>
           <p class="mt-5">
-            Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
+            I'm <b>Aziz Ramdan Kurniawan</b>, a web developer, specializing in
+            building applications using the Laravel and Vue.js ecosystems. I
+            enjoy working with backend and server environments and have a
+            passion for teaching.
           </p>
-          <div class="mt-5">
-            <b>Built with</b> <br>
-            <a href="/projects?tag=laravel" class="underline">#laravel</a>
-            <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
-          </div>
-        </div>
-        <div class="hidden lg:flex justify-end">
-          <div class="img-container -rotate-2 relative flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-              <path d="M9 15l-4.5 4.5" />
-              <path d="M14.5 4l5.5 5.5" />
-            </svg>
-            <img src="https://picsum.photos/520/290?random=1" width="520" height="290" alt="" class="grayscale rotate-1">
-          </div>
-        </div>
-      </div>
-      <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container">
-        <!-- reverse: order-2 pl-3 xl:pl-0 -->
-        <div class="lg:col-span-2 order-2 pl-3 xl:pl-0 xl:col-span-1">
-          <a href="/projects/lidia" class="font-bold underline">Lidia</a>
-          <div class="flex justify-center lg:hidden relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-              <path d="M9 15l-4.5 4.5" />
-              <path d="M14.5 4l5.5 5.5" />
-            </svg>
-            <img src="https://picsum.photos/520/290?random=2" width="520" height="290" alt="" class="my-2 img-container rotate-2 grayscale">
-          </div>
           <p class="mt-5">
-            Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
+            <a href="mailto:hello@azizramdan.id" class="underline font-bold"
+              >Say hello</a
+            >, or keep scrolling.
           </p>
-          <div class="mt-5">
-            <b>Built with</b> <br>
-            <a href="/projects?tag=laravel" class="underline">#laravel</a>
-            <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
+        </div>
+      </section>
+
+      <section id="projects" class="mt-16">
+        <a href="#projects">#projects</a>
+        <div
+          class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container"
+        >
+          <div class="lg:col-span-2 xl:col-span-1">
+            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <div class="flex justify-center lg:hidden relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                />
+                <path d="M9 15l-4.5 4.5" />
+                <path d="M14.5 4l5.5 5.5" />
+              </svg>
+              <img
+                src="https://picsum.photos/520/290?random=1"
+                width="520"
+                height="290"
+                alt=""
+                class="my-2 img-container -rotate-2 grayscale"
+              />
+            </div>
+            <p class="mt-5">
+              Digital library landing page design with a modern and clean
+              layout, this page features a striking hero section with a bold
+              call-to-action, along with easy-to-scan service descriptions,
+              reviews, and location sections.
+            </p>
+            <div class="mt-5">
+              <b>Built with</b> <br />
+              <a href="/projects?tag=laravel" class="underline">#laravel</a>
+              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
+            </div>
+          </div>
+          <div class="hidden lg:flex justify-end">
+            <div class="img-container -rotate-2 relative flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                />
+                <path d="M9 15l-4.5 4.5" />
+                <path d="M14.5 4l5.5 5.5" />
+              </svg>
+              <img
+                src="https://picsum.photos/520/290?random=1"
+                width="520"
+                height="290"
+                alt=""
+                class="grayscale rotate-1"
+              />
+            </div>
           </div>
         </div>
-        <!-- reverse: justify-start -->
-        <div class="hidden lg:flex justify-start">
-          <div class="img-container rotate-2 relative flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-              <path d="M9 15l-4.5 4.5" />
-              <path d="M14.5 4l5.5 5.5" />
-            </svg>
-            <img src="https://picsum.photos/520/290?random=2" width="520" height="290" alt="" class="grayscale -rotate-1">
+        <div
+          class="mt-5 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container"
+        >
+          <!-- reverse: order-2 pl-3 xl:pl-0 -->
+          <div class="lg:col-span-2 order-2 pl-3 xl:pl-0 xl:col-span-1">
+            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <div class="flex justify-center lg:hidden relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                />
+                <path d="M9 15l-4.5 4.5" />
+                <path d="M14.5 4l5.5 5.5" />
+              </svg>
+              <img
+                src="https://picsum.photos/520/290?random=2"
+                width="520"
+                height="290"
+                alt=""
+                class="my-2 img-container rotate-2 grayscale"
+              />
+            </div>
+            <p class="mt-5">
+              Digital library landing page design with a modern and clean
+              layout, this page features a striking hero section with a bold
+              call-to-action, along with easy-to-scan service descriptions,
+              reviews, and location sections.
+            </p>
+            <div class="mt-5">
+              <b>Built with</b> <br />
+              <a href="/projects?tag=laravel" class="underline">#laravel</a>
+              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
+            </div>
+          </div>
+          <!-- reverse: justify-start -->
+          <div class="hidden lg:flex justify-start">
+            <div class="img-container rotate-2 relative flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                />
+                <path d="M9 15l-4.5 4.5" />
+                <path d="M14.5 4l5.5 5.5" />
+              </svg>
+              <img
+                src="https://picsum.photos/520/290?random=2"
+                width="520"
+                height="290"
+                alt=""
+                class="grayscale -rotate-1"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container">
-        <div class="lg:col-span-2 xl:col-span-1">
-          <a href="/projects/lidia" class="font-bold underline">Lidia</a>
-          <div class="flex justify-center lg:hidden relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-              <path d="M9 15l-4.5 4.5" />
-              <path d="M14.5 4l5.5 5.5" />
-            </svg>
-            <img src="https://picsum.photos/520/290?random=3" width="520" height="290" alt="" class="my-2 img-container -rotate-2 grayscale">
+        <div
+          class="mt-5 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container"
+        >
+          <div class="lg:col-span-2 xl:col-span-1">
+            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <div class="flex justify-center lg:hidden relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                />
+                <path d="M9 15l-4.5 4.5" />
+                <path d="M14.5 4l5.5 5.5" />
+              </svg>
+              <img
+                src="https://picsum.photos/520/290?random=3"
+                width="520"
+                height="290"
+                alt=""
+                class="my-2 img-container -rotate-2 grayscale"
+              />
+            </div>
+            <p class="mt-5">
+              Digital library landing page design with a modern and clean
+              layout, this page features a striking hero section with a bold
+              call-to-action, along with easy-to-scan service descriptions,
+              reviews, and location sections.
+            </p>
+            <div class="mt-5">
+              <b>Built with</b> <br />
+              <a href="/projects?tag=laravel" class="underline">#laravel</a>
+              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
+            </div>
           </div>
-          <p class="mt-5">
-            Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
+          <div class="hidden lg:flex justify-end">
+            <div class="img-container -rotate-2 relative flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                />
+                <path d="M9 15l-4.5 4.5" />
+                <path d="M14.5 4l5.5 5.5" />
+              </svg>
+              <img
+                src="https://picsum.photos/520/290?random=3"
+                width="520"
+                height="290"
+                alt=""
+                class="grayscale rotate-1"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="writings" class="mt-16">
+        <a href="#writings">#writings</a>
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 xl:gap-x-40 2xl:gap-x-60 lg:px-2 gap-y-10"
+        >
+          <div class="section-container -rotate-1">
+            <div class="rotate-1">
+              <div class="flex justify-center relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                  />
+                  <path d="M9 15l-4.5 4.5" />
+                  <path d="M14.5 4l5.5 5.5" />
+                </svg>
+                <img
+                  src="https://picsum.photos/550/265?random=1"
+                  width="550"
+                  height="265"
+                  alt=""
+                  class="flex-1 grayscale"
+                />
+              </div>
+              <div class="p-3">
+                <a href="/writings/1" class="mt-3 block underline font-bold"
+                  >Immutable array updates with Array.prototype.with</a
+                >
+                <small class="block mt-2">-February 6, 2024</small>
+                <div class="mt-2">
+                  <a href="/writings?tag=javascript" class="underline"
+                    ><small>#javascript</small></a
+                  >
+                  <a href="/writings?tag=typescript" class="underline"
+                    ><small>#typescript</small></a
+                  >
+                </div>
+                <p class="mt-5">
+                  Learn how to use this new method to update an array without
+                  mutating the original array.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="section-container rotate-1">
+            <div class="-rotate-1">
+              <div class="flex justify-center relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                  />
+                  <path d="M9 15l-4.5 4.5" />
+                  <path d="M14.5 4l5.5 5.5" />
+                </svg>
+                <img
+                  src="https://picsum.photos/550/265?random=2"
+                  width="550"
+                  height="265"
+                  alt=""
+                  class="flex-1 grayscale"
+                />
+              </div>
+              <div class="p-3">
+                <a href="/writings/1" class="mt-3 block underline font-bold"
+                  >Immutable array updates with Array.prototype.with</a
+                >
+                <small class="block mt-2">-February 6, 2024</small>
+                <div class="mt-2">
+                  <a href="/writings?tag=javascript" class="underline"
+                    ><small>#javascript</small></a
+                  >
+                  <a href="/writings?tag=typescript" class="underline"
+                    ><small>#typescript</small></a
+                  >
+                </div>
+                <p class="mt-5">
+                  Learn how to use this new method to update an array without
+                  mutating the original array.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="section-container -rotate-1">
+            <div class="rotate-1">
+              <div class="flex justify-center relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                  />
+                  <path d="M9 15l-4.5 4.5" />
+                  <path d="M14.5 4l5.5 5.5" />
+                </svg>
+                <img
+                  src="https://picsum.photos/550/265?random=3"
+                  width="550"
+                  height="265"
+                  alt=""
+                  class="flex-1 grayscale"
+                />
+              </div>
+              <div class="p-3">
+                <a href="/writings/1" class="mt-3 block underline font-bold"
+                  >Immutable array updates with Array.prototype.with</a
+                >
+                <small class="block mt-2">-February 6, 2024</small>
+                <div class="mt-2">
+                  <a href="/writings?tag=javascript" class="underline"
+                    ><small>#javascript</small></a
+                  >
+                  <a href="/writings?tag=typescript" class="underline"
+                    ><small>#typescript</small></a
+                  >
+                </div>
+                <p class="mt-5">
+                  Learn how to use this new method to update an array without
+                  mutating the original array.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="section-container rotate-1">
+            <div class="-rotate-1">
+              <div class="flex justify-center relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                  />
+                  <path d="M9 15l-4.5 4.5" />
+                  <path d="M14.5 4l5.5 5.5" />
+                </svg>
+                <img
+                  src="https://picsum.photos/550/265?random=4"
+                  width="550"
+                  height="265"
+                  alt=""
+                  class="flex-1 grayscale"
+                />
+              </div>
+              <div class="p-3">
+                <a href="/writings/1" class="mt-3 block underline font-bold"
+                  >Immutable array updates with Array.prototype.with</a
+                >
+                <small class="block mt-2">-February 6, 2024</small>
+                <div class="mt-2">
+                  <a href="/writings?tag=javascript" class="underline"
+                    ><small>#javascript</small></a
+                  >
+                  <a href="/writings?tag=typescript" class="underline"
+                    ><small>#typescript</small></a
+                  >
+                </div>
+                <p class="mt-5">
+                  Learn how to use this new method to update an array without
+                  mutating the original array.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="mt-16">
+        <a href="#contact">#contact</a>
+        <div class="p-6 section-container">
+          <p>
+            I've worked on various projects, from small websites to large-scale
+            applications. I love solving complex problems and making systems
+            more efficient.
+            <br /><br />
+            If you're interested in collaborating on a project or discussing how
+            I can help your business grow through web development, let's
+            connect!
           </p>
-          <div class="mt-5">
-            <b>Built with</b> <br>
-            <a href="/projects?tag=laravel" class="underline">#laravel</a>
-            <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
-          </div>
-        </div>
-        <div class="hidden lg:flex justify-end">
-          <div class="img-container -rotate-2 relative flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-              <path d="M9 15l-4.5 4.5" />
-              <path d="M14.5 4l5.5 5.5" />
-            </svg>
-            <img src="https://picsum.photos/520/290?random=3" width="520" height="290" alt="" class="grayscale rotate-1">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="writings" class="mt-16">
-      <a href="#writings">#writings</a>
-      <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 xl:gap-x-40 2xl:gap-x-60 lg:px-2 gap-y-10">
-        <div class="section-container -rotate-1">
-          <div class="rotate-1">
-            <div class="flex justify-center relative">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <div class="flex gap-6 mt-8 justify-center">
+            <a href="mailto:hello@azizramdan.id">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-mail"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
+                <path
+                  d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+                />
+                <path d="M3 7l9 6l9 -6" />
               </svg>
-              <img src="https://picsum.photos/550/265?random=1" width="550" height="265" alt="" class="flex-1 grayscale">
-            </div>
-            <div class="p-3">
-              <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
-              <small class="block mt-2">-February 6, 2024</small>
-              <div class="mt-2">
-                <a href="/writings?tag=javascript" class="underline"><small>#javascript</small></a>
-                <a href="/writings?tag=typescript" class="underline"><small>#typescript</small></a>
-              </div>
-              <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
-            </div>
-          </div>
-        </div>
-        <div class="section-container rotate-1">
-          <div class="-rotate-1">
-            <div class="flex justify-center relative">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            </a>
+            <a href="https://t.me/azizramdan">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-brand-telegram"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
+                <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
               </svg>
-              <img src="https://picsum.photos/550/265?random=2" width="550" height="265" alt="" class="flex-1 grayscale">
-            </div>
-            <div class="p-3">
-              <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
-              <small class="block mt-2">-February 6, 2024</small>
-              <div class="mt-2">
-                <a href="/writings?tag=javascript" class="underline"><small>#javascript</small></a>
-                <a href="/writings?tag=typescript" class="underline"><small>#typescript</small></a>
-              </div>
-              <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
-            </div>
-          </div>
-        </div>
-        <div class="section-container -rotate-1">
-          <div class="rotate-1">
-            <div class="flex justify-center relative">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            </a>
+            <a href="https://github.com/azizramdan/">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-brand-github"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
+                <path
+                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                />
               </svg>
-              <img src="https://picsum.photos/550/265?random=3" width="550" height="265" alt="" class="flex-1 grayscale">
-            </div>
-            <div class="p-3">
-              <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
-              <small class="block mt-2">-February 6, 2024</small>
-              <div class="mt-2">
-                <a href="/writings?tag=javascript" class="underline"><small>#javascript</small></a>
-                <a href="/writings?tag=typescript" class="underline"><small>#typescript</small></a>
-              </div>
-              <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
-            </div>
-          </div>
-        </div>
-        <div class="section-container rotate-1">
-          <div class="-rotate-1">
-            <div class="flex justify-center relative">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            </a>
+            <a href="https://www.linkedin.com/in/azizramdan">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-brand-linkedin"
+                width="42"
+                height="42"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
+                <path
+                  d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+                />
+                <path d="M8 11l0 5" />
+                <path d="M8 8l0 .01" />
+                <path d="M12 16l0 -5" />
+                <path d="M16 16v-3a2 2 0 0 0 -4 0" />
               </svg>
-              <img src="https://picsum.photos/550/265?random=4" width="550" height="265" alt="" class="flex-1 grayscale">
-            </div>
-            <div class="p-3">
-              <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
-              <small class="block mt-2">-February 6, 2024</small>
-              <div class="mt-2">
-                <a href="/writings?tag=javascript" class="underline"><small>#javascript</small></a>
-                <a href="/writings?tag=typescript" class="underline"><small>#typescript</small></a>
-              </div>
-              <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
-            </div>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="contact" class="mt-16">
-      <a href="#contact">#contact</a>
-      <div class="p-6 section-container">
-        <p>
-          I've worked on various projects, from small websites to large-scale applications. I love solving complex problems and making systems more efficient.
-          <br><br>
-          If you're interested in collaborating on a project or discussing how I can help your business grow through web development, let's connect!
-        </p>
-        <div class="flex gap-6 mt-8 justify-center">
-          <a href="mailto:hello@azizramdan.id">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-              <path d="M3 7l9 6l9 -6" />
-            </svg>
-          </a>
-          <a href="https://t.me/azizramdan">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-            </svg>
-          </a>
-          <a href="https://github.com/azizramdan/">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/azizramdan">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
-              <path d="M8 11l0 5" />
-              <path d="M8 8l0 .01" />
-              <path d="M12 16l0 -5" />
-              <path d="M16 16v-3a2 2 0 0 0 -4 0" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="flex justify-center mt-7 mb-5">
-    <p>&copy; 2024 | Aziz Ramdan Kurniawan</p>
-  </footer>
-</body>
-
+    <footer class="flex justify-center mt-7 mb-5">
+      <p>&copy; 2024 | Aziz Ramdan Kurniawan</p>
+    </footer>
+  </body>
 </html>

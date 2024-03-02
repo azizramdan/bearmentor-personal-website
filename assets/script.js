@@ -4,7 +4,7 @@ document.addEventListener('alpine:init', () => {
 
     toggle() {
       this.on = !this.on
-    }
+    },
   })
 
   Alpine.store('darkMode', {
@@ -14,6 +14,6 @@ document.addEventListener('alpine:init', () => {
       this.on = !this.on
 
       localStorage.theme = this.on ? 'dark' : 'light'
-    }
+    },
   })
 })
