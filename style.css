@@ -6,16 +6,22 @@
   html {
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    @apply font-normal;
+    @apply not-italic;
+    @apply text-xl;
   }
 }
 
 .section-container {
   @apply border-2;
   @apply border-black;
+  @apply dark:border-[#363636];
   @apply shadow-[5px_5px_0px_0px_rgba(0,0,0)];
+  @apply dark:shadow-[5px_5px_0px_0px_rgba(54,54,54)];
   @apply lg:shadow-[10px_10px_0px_0px_rgba(0,0,0)];
+  @apply dark:lg:shadow-[10px_10px_0px_0px_rgba(54,54,54)];
+  @apply bg-white;
+  @apply dark:bg-[#171717];
 }
 
 .section-container:hover img {
@@ -25,5 +31,7 @@
 .img-container {
   @apply border-2;
   @apply border-black;
+  @apply dark:border-[#363636];
   @apply shadow-[5px_5px_0px_0px_rgba(0,0,0)];
+  @apply dark:shadow-[5px_5px_0px_0px_rgba(54,54,54)];
 }

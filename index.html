@@ -18,8 +18,8 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
 </head>
 
-<body x-data :class="$store.darkMode.on && 'dark'">
-  <header class="border-b-2 py-2">
+<body x-data :class="$store.darkMode.on && 'dark'" class="text-[#171717] dark:text-[#fafafa] bg-[#f5f5f5] dark:bg-black">
+  <header class="border-b-2 py-2 bg-white dark:bg-[#171717] dark:border-[#363636]">
     <div class="container mx-auto flex justify-between items-center px-3 lg:px-8 relative">
       <button x-data @click="$store.mobileMenu.toggle()" class="md:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -30,7 +30,7 @@
         </svg>
       </button>
       <a href="/">
-        <img src="./assets/arlab-logo.jpg" alt="ARLab Logo" class="invert bg-transparent w-[50px] md:w-[67px]">
+        <img src="./assets/arlab-logo.png" alt="ARLab Logo" class="invert dark:invert-0 w-[50px] md:w-[67px]">
       </a>
 
       <nav
@@ -43,7 +43,7 @@
             { name: 'contact', href: '#contact' },
           ]
         }"
-        class="md:block absolute md:static top-[60px] md:top-auto bg-white md:bg-transparent w-full md:w-auto border-2 border-t-0 md:border-0 -ml-3 md:ml-0 p-6 md:p-0"
+        class="md:block absolute md:static top-[60px] md:top-auto bg-white dark:bg-[#171717] md:bg-transparent w-full md:w-auto border-2 dark:border-[#363636] border-t-0 md:border-0 -ml-3 md:ml-0 p-6 md:p-0"
         :class="$store.mobileMenu.on ? 'block' : 'hidden'"
       >
         <ul class="flex flex-col md:flex-row gap-6">
@@ -103,7 +103,7 @@
         <div class="lg:col-span-2 xl:col-span-1">
           <a href="/projects/lidia" class="font-bold underline">Lidia</a>
           <div class="flex justify-center lg:hidden relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
               <path d="M9 15l-4.5 4.5" />
@@ -122,7 +122,7 @@
         </div>
         <div class="hidden lg:flex justify-end">
           <div class="img-container -rotate-2 relative flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
               <path d="M9 15l-4.5 4.5" />
@@ -137,7 +137,7 @@
         <div class="lg:col-span-2 order-2 pl-3 xl:pl-0 xl:col-span-1">
           <a href="/projects/lidia" class="font-bold underline">Lidia</a>
           <div class="flex justify-center lg:hidden relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
               <path d="M9 15l-4.5 4.5" />
@@ -157,7 +157,7 @@
         <!-- reverse: justify-start -->
         <div class="hidden lg:flex justify-start">
           <div class="img-container rotate-2 relative flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
               <path d="M9 15l-4.5 4.5" />
@@ -171,7 +171,7 @@
         <div class="lg:col-span-2 xl:col-span-1">
           <a href="/projects/lidia" class="font-bold underline">Lidia</a>
           <div class="flex justify-center lg:hidden relative">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
               <path d="M9 15l-4.5 4.5" />
@@ -190,7 +190,7 @@
         </div>
         <div class="hidden lg:flex justify-end">
           <div class="img-container -rotate-2 relative flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
               <path d="M9 15l-4.5 4.5" />
@@ -208,7 +208,7 @@
         <div class="section-container -rotate-1">
           <div class="rotate-1">
             <div class="flex justify-center relative">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
                 <path d="M9 15l-4.5 4.5" />
@@ -230,7 +230,7 @@
         <div class="section-container rotate-1">
           <div class="-rotate-1">
             <div class="flex justify-center relative">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
                 <path d="M9 15l-4.5 4.5" />
@@ -252,7 +252,7 @@
         <div class="section-container -rotate-1">
           <div class="rotate-1">
             <div class="flex justify-center relative">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
                 <path d="M9 15l-4.5 4.5" />
@@ -274,7 +274,7 @@
         <div class="section-container rotate-1">
           <div class="-rotate-1">
             <div class="flex justify-center relative">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black fill-white" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4" />
                 <path d="M9 15l-4.5 4.5" />
