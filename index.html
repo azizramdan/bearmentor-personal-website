@@ -63,76 +63,165 @@
 
     </header>
 
-    <main class="container mx-auto">
+    <main class="container mx-auto py-4">
       <section id="home">
-        <a href="#home">home</a>
-        <div>
+        <a href="#home">#home</a>
+        <div class="border-2 border-black p-6 shadow-[10px_10px_0px_0px_rgba(0,0,0)]">
           <p>
-            <b>Hello World!</b> <br>
-            I'm <b>Aziz Ramdan Kurniawan</b>, a web developer, specializing in building applications using the Laravel and Vue.js ecosystems. I enjoy working with backend and server environments and have a passion for teaching. <br>
-            <a href="mailto:hello@azizramdan.id">Say hello</a>, or keep scrolling.
+            <b class="block">Hello World!</b>
+            <p class="mt-5">
+              I'm <b>Aziz Ramdan Kurniawan</b>, a web developer, specializing in building applications using the Laravel and Vue.js ecosystems. I enjoy working with backend and server environments and have a passion for teaching.
+            </p>
+            <p class="mt-5">
+              <a href="mailto:hello@azizramdan.id" class="underline font-bold">Say hello</a>, or keep scrolling.
+            </p>
           </p>
         </div>
       </section>
 
-      <section id="projects">
-        <a href="#projects">projects</a>
-        <div>
+      <section id="projects" class="mt-16">
+        <a href="#projects">#projects</a>
+        <div class="grid grid-cols-2 border-2 border-black p-6 shadow-[10px_10px_0px_0px_rgba(0,0,0)]">
           <div>
-            <a href="/projects/lidia">Lidia</a>
-            <p>
+            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <p class="mt-5">
               Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
             </p>
-            <b>Built with</b> <br>
-            <a href="/projects?tag=laravel">laravel</a>
-            <a href="/projects?tag=vuejs">vuejs</a>
+            <div class="mt-5">
+              <b>Built with</b> <br>
+              <a href="/projects?tag=laravel" class="underline">#laravel</a>
+              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
+            </div>
           </div>
-          <div>
-            <img src="https://picsum.photos/523/290?grayscale" alt="">
+          <div class="flex justify-end">
+            <img src="https://picsum.photos/523/290?grayscale" alt="" class="border-2 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0)] -rotate-2">
           </div>
         </div>
-        <div>
+
+        <div class="mt-5 grid grid-cols-2 border-2 border-black p-6 shadow-[10px_10px_0px_0px_rgba(0,0,0)]">
           <div>
-            <a href="/projects/lidia">Lidia</a>
-            <p>
+            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <p class="mt-5">
               Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
             </p>
-            <b>Built with</b> <br>
-            <a href="/projects?tag=laravel">laravel</a>
-            <a href="/projects?tag=vuejs">vuejs</a>
+            <div class="mt-5">
+              <b>Built with</b> <br>
+              <a href="/projects?tag=laravel" class="underline">#laravel</a>
+              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
+            </div>
           </div>
-          <div>
-            <img src="https://picsum.photos/523/290?grayscale" alt="">
+          <div class="flex justify-end">
+            <img src="https://picsum.photos/523/290?grayscale" alt="" class="border-2 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0)] rotate-2">
+          </div>
+        </div>
+
+        <div class="mt-5 grid grid-cols-2 border-2 border-black p-6 shadow-[10px_10px_0px_0px_rgba(0,0,0)]">
+          <div class="order-2">
+            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <p class="mt-5">
+              Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
+            </p>
+            <div class="mt-5">
+              <b>Built with</b> <br>
+              <a href="/projects?tag=laravel" class="underline">#laravel</a>
+              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse justify-end">
+            <img src="https://picsum.photos/523/290?grayscale" alt="" class="border-2 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0)] rotate-2">
           </div>
         </div>
       </section>
 
-      <section id="writings">
-        <a href="#writings">writings</a>
-        <div>
-          <img src="https://picsum.photos/552/264?grayscale" alt="">
-          <a href="/writings/1">Immutable array updates with Array.prototype.with</a>
-          <small>-February 6, 2024</small>
-          <div>
-            <a href="/writings?tag=javascript">javascript</a>
-            <a href="/writings?tag=typescript">typescript</a>
+      <section id="writings" class="mt-16">
+        <a href="#writings">#writings</a>
+        <div class="grid grid-cols-2 gap-x-80 gap-y-10 px-3">
+          <div class="border-2 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0)] -rotate-1">
+            <div class="flex justify-center">
+              <img src="https://picsum.photos/552/264?grayscale" alt="" class="flex-1">
+            </div>
+            <div class="p-3">
+              <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
+              <small class="block mt-2">-February 6, 2024</small>
+              <div class="mt-2">
+                <a href="/writings?tag=javascript" class="underline"><small>#javascript</small></a>
+                <a href="/writings?tag=typescript" class="underline"><small>#typescript</small></a>
+              </div>
+              <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
+            </div>
           </div>
-          <p>Learn how to use this new method to update an array without mutating the original array.</p>
+          <div class="border-2 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0)] rotate-1">
+            <div class="flex justify-center">
+              <img src="https://picsum.photos/552/264?grayscale" alt="" class="flex-1">
+            </div>
+            <div class="p-3">
+              <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
+              <small class="block mt-2">-February 6, 2024</small>
+              <div class="mt-2">
+                <a href="/writings?tag=javascript" class="underline"><small>#javascript</small></a>
+                <a href="/writings?tag=typescript" class="underline"><small>#typescript</small></a>
+              </div>
+              <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
+            </div>
+          </div>
+          <div class="border-2 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0)] -rotate-1">
+            <div class="flex justify-center">
+              <img src="https://picsum.photos/552/264?grayscale" alt="" class="flex-1">
+            </div>
+            <div class="p-3">
+              <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
+              <small class="block mt-2">-February 6, 2024</small>
+              <div class="mt-2">
+                <a href="/writings?tag=javascript" class="underline"><small>#javascript</small></a>
+                <a href="/writings?tag=typescript" class="underline"><small>#typescript</small></a>
+              </div>
+              <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
+            </div>
+          </div>
+          <div class="border-2 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0)] rotate-1">
+            <div class="flex justify-center">
+              <img src="https://picsum.photos/552/264?grayscale" alt="" class="flex-1">
+            </div>
+            <div class="p-3">
+              <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
+              <small class="block mt-2">-February 6, 2024</small>
+              <div class="mt-2">
+                <a href="/writings?tag=javascript" class="underline"><small>#javascript</small></a>
+                <a href="/writings?tag=typescript" class="underline"><small>#typescript</small></a>
+              </div>
+              <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <img src="https://picsum.photos/552/264?grayscale" alt="">
-          <a href="/writings/1">Immutable array updates with Array.prototype.with</a>
-          <small>-February 6, 2024</small>
-          <div>
-            <a href="/writings?tag=javascript">javascript</a>
-            <a href="/writings?tag=typescript">typescript</a>
+      </section>
+
+      <section id="contact" class="mt-16">
+        <a href="#contact">#contact</a>
+        <div class="border-2 border-black p-6 shadow-[10px_10px_0px_0px_rgba(0,0,0)]">
+          <p>
+            I've worked on various projects, from small websites to large-scale applications. I love solving complex problems and making systems more efficient.
+            <br><br>
+            If you're interested in collaborating on a project or discussing how I can help your business grow through web development, let's connect!
+          </p>
+          <div class="flex gap-6 mt-8 justify-center">
+            <a href="mailto:hello@azizramdan.id">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+            </a>
+            <a href="https://t.me/azizramdan">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>
+            </a>
+            <a href="https://github.com/azizramdan/">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/azizramdan">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+            </a>
           </div>
-          <p>Learn how to use this new method to update an array without mutating the original array.</p>
         </div>
       </section>
     </main>
 
-    <footer class="flex justify-center">
+    <footer class="flex justify-center mt-16 mb-5">
       <p>Aziz Ramdan Kurniawan &copy; 2024</p>
     </footer>
   </body>
