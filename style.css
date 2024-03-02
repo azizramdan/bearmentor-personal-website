@@ -12,13 +12,18 @@
 }
 
 .section-container {
-  @apply shadow-[10px_10px_0px_0px_rgba(0,0,0)]
+  @apply border-2;
+  @apply border-black;
+  @apply shadow-[5px_5px_0px_0px_rgba(0,0,0)];
+  @apply lg:shadow-[10px_10px_0px_0px_rgba(0,0,0)];
 }
 
 .section-container:hover img {
-  @apply grayscale-0
+  @apply grayscale-0;
 }
 
 .img-container {
-  @apply shadow-[5px_5px_0px_0px_rgba(0,0,0)]
+  @apply border-2;
+  @apply border-black;
+  @apply shadow-[5px_5px_0px_0px_rgba(0,0,0)];
 }

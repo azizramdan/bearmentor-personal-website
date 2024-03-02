@@ -14,16 +14,17 @@
 
     <link href="./assets/style.css" rel="stylesheet">
   </head>
-  <body class="text-xl">
+  <body>
     <header class="border-b-2 py-2">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1>
-          <a href="/">
-              <img src="./assets/arlab-logo.jpg" alt="ARLab Logo" class="invert w-[67px]">
-          </a>
-        </h1>
+      <div class="container mx-auto flex justify-between items-center px-3">
+        <button class="md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+        </button>
+        <a href="/">
+            <img src="./assets/arlab-logo.jpg" alt="ARLab Logo" class="invert w-[50px] md:w-[67px]">
+        </a>
   
-        <nav>
+        <nav class="hidden md:block">
           <ul class="flex gap-6">
             <li>
               <a href="#home">home</a>
@@ -45,7 +46,7 @@
         
         <div>
           <button>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun-filled" width="42" height="42" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun-filled" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" stroke-width="0" fill="currentColor" />
               <path d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z" stroke-width="0" fill="currentColor" />
@@ -57,16 +58,21 @@
               <path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" stroke-width="0" fill="currentColor" />
               <path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor" />
             </svg>
+
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-filled" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z" stroke-width="0" fill="currentColor" />
+            </svg> -->
           </button>
         </div>
       </div>
 
     </header>
 
-    <main class="container mx-auto py-4">
+    <main class="container mx-auto px-3 lg:px-8 py-4">
       <section id="home">
         <a href="#home">#home</a>
-        <div class="border-2 border-black p-6 section-container">
+        <div class="p-6 section-container">
           <p>
             <b class="block">Hello World!</b>
             <p class="mt-5">
@@ -81,9 +87,12 @@
 
       <section id="projects" class="mt-16">
         <a href="#projects">#projects</a>
-        <div class="grid grid-cols-2 border-2 border-black p-6 section-container">
-          <div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container">
+          <div class="lg:col-span-2 xl:col-span-1">
             <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <div class="flex justify-center lg:hidden">
+              <img src="https://picsum.photos/523/290" alt="" class="my-2 img-container -rotate-2 grayscale">
+            </div>
             <p class="mt-5">
               Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
             </p>
@@ -93,14 +102,19 @@
               <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
             </div>
           </div>
-          <div class="flex justify-end">
-            <img src="https://picsum.photos/523/290" alt="" class="border-2 border-black img-container -rotate-2 grayscale">
+          <div class="hidden lg:flex justify-end">
+            <div class="img-container -rotate-2 ">
+              <img src="https://picsum.photos/523/290" alt="" class="grayscale rotate-1">
+            </div>
           </div>
         </div>
-
-        <div class="mt-5 grid grid-cols-2 border-2 border-black p-6 section-container">
-          <div>
+        <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container">
+          <!-- reverse: order-2 pl-3 xl:pl-0 -->
+          <div class="lg:col-span-2 order-2 pl-3 xl:pl-0 xl:col-span-1">
             <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <div class="flex justify-center lg:hidden">
+              <img src="https://picsum.photos/523/290" alt="" class="my-2 img-container rotate-2 grayscale">
+            </div>
             <p class="mt-5">
               Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
             </p>
@@ -110,14 +124,19 @@
               <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
             </div>
           </div>
-          <div class="flex justify-end">
-            <img src="https://picsum.photos/523/290" alt="" class="border-2 border-black img-container rotate-2 grayscale">
+          <!-- reverse: justify-start -->
+          <div class="hidden lg:flex justify-start">
+            <div class="img-container rotate-2 ">
+              <img src="https://picsum.photos/523/290" alt="" class="grayscale -rotate-1">
+            </div>
           </div>
         </div>
-
-        <div class="mt-5 grid grid-cols-2 border-2 border-black p-6 section-container">
-          <div class="order-2">
+        <div class="mt-5 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container">
+          <div class="lg:col-span-2 xl:col-span-1">
             <a href="/projects/lidia" class="font-bold underline">Lidia</a>
+            <div class="flex justify-center lg:hidden">
+              <img src="https://picsum.photos/523/290" alt="" class="my-2 img-container -rotate-2 grayscale">
+            </div>
             <p class="mt-5">
               Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service descriptions, reviews, and location sections.
             </p>
@@ -127,20 +146,22 @@
               <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
             </div>
           </div>
-          <div class="flex flex-row-reverse justify-end">
-            <img src="https://picsum.photos/523/290" alt="" class="border-2 border-black img-container rotate-2 grayscale">
+          <div class="hidden lg:flex justify-end">
+            <div class="img-container -rotate-2 ">
+              <img src="https://picsum.photos/523/290" alt="" class="grayscale rotate-1">
+            </div>
           </div>
         </div>
       </section>
 
       <section id="writings" class="mt-16">
         <a href="#writings">#writings</a>
-        <div class="grid grid-cols-2 gap-x-80 gap-y-10 px-3">
-          <div class="border-2 border-black section-container -rotate-1">
-            <div class="flex justify-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 xl:gap-x-40 2xl:gap-x-60 lg:px-2 gap-y-10">
+          <div class="section-container -rotate-1">
+            <div class="flex justify-center rotate-1">
               <img src="https://picsum.photos/552/264" alt="" class="flex-1 grayscale">
             </div>
-            <div class="p-3">
+            <div class="p-3 rotate-1">
               <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
               <small class="block mt-2">-February 6, 2024</small>
               <div class="mt-2">
@@ -150,11 +171,11 @@
               <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
             </div>
           </div>
-          <div class="border-2 border-black section-container rotate-1">
-            <div class="flex justify-center">
+          <div class="section-container rotate-1">
+            <div class="flex justify-center -rotate-1">
               <img src="https://picsum.photos/552/264" alt="" class="flex-1 grayscale">
             </div>
-            <div class="p-3">
+            <div class="p-3 -rotate-1">
               <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
               <small class="block mt-2">-February 6, 2024</small>
               <div class="mt-2">
@@ -164,11 +185,11 @@
               <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
             </div>
           </div>
-          <div class="border-2 border-black section-container -rotate-1">
-            <div class="flex justify-center">
+          <div class="section-container -rotate-1">
+            <div class="flex justify-center rotate-1">
               <img src="https://picsum.photos/552/264" alt="" class="flex-1 grayscale">
             </div>
-            <div class="p-3">
+            <div class="p-3 rotate-1">
               <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
               <small class="block mt-2">-February 6, 2024</small>
               <div class="mt-2">
@@ -178,11 +199,11 @@
               <p class="mt-5">Learn how to use this new method to update an array without mutating the original array.</p>
             </div>
           </div>
-          <div class="border-2 border-black section-container rotate-1">
-            <div class="flex justify-center">
+          <div class="section-container rotate-1">
+            <div class="flex justify-center -rotate-1">
               <img src="https://picsum.photos/552/264" alt="" class="flex-1 grayscale">
             </div>
-            <div class="p-3">
+            <div class="p-3 -rotate-1">
               <a href="/writings/1" class="mt-3 block underline font-bold">Immutable array updates with Array.prototype.with</a>
               <small class="block mt-2">-February 6, 2024</small>
               <div class="mt-2">
@@ -197,7 +218,7 @@
 
       <section id="contact" class="mt-16">
         <a href="#contact">#contact</a>
-        <div class="border-2 border-black p-6 section-container">
+        <div class="p-6 section-container">
           <p>
             I've worked on various projects, from small websites to large-scale applications. I love solving complex problems and making systems more efficient.
             <br><br>
@@ -221,7 +242,7 @@
       </section>
     </main>
 
-    <footer class="flex justify-center mt-16 mb-5">
+    <footer class="flex justify-center mt-7 mb-5">
       <p>Aziz Ramdan Kurniawan &copy; 2024</p>
     </footer>
   </body>
