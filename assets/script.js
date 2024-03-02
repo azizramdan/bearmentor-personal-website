@@ -1,6 +1,9 @@
-function toggleMobileMenu() {
-    document.getElementById('nav-menu').classList.toggle('hidden');
-}
+document.addEventListener('alpine:init', () => {
+  Alpine.store('mobileMenu', {
+    on: false,
 
-document.getElementById('mobile-menu').addEventListener('click', toggleMobileMenu)
-document.getElementById('nav-menu').addEventListener('click', toggleMobileMenu)
+    toggle() {
+      this.on = !this.on
+    }
+  })
+})
