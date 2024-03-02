@@ -1,0 +1,15 @@
+{
+  "name": "bearmentor-personal-website",
+  "version": "0.0.1",
+  "description": "Personal Website",
+  "dependencies": {},
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "scripts": {
+    "tailwind:watch": "tailwindcss -i ./style.css -o ./assets/style.css --watch",
+    "tailwind:build": "tailwindcss -i ./style.css -o ./assets/style.css --minify"
+  },
+  "author": "Aziz Ramdan Kurniawan",
+  "license": "MIT"
+}
