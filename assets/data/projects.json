@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Lidia",
+    "description": "Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service description, reviews, and location sections.",
+    "tech": ["laravel", "vuejs", "tailwindcss"],
+    "image": "https://picsum.photos/520/290?random=1"
+  },
+  {
+    "id": 2,
+    "name": "Lidia",
+    "description": "Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service description, reviews, and location sections.",
+    "tech": ["laravel", "vuejs", "tailwindcss"],
+    "image": "https://picsum.photos/520/290?random=2"
+  },
+  {
+    "id": 3,
+    "name": "Lidia",
+    "description": "Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service description, reviews, and location sections.",
+    "tech": ["laravel", "vuejs", "tailwindcss"],
+    "image": "https://picsum.photos/520/290?random=3"
+  }
+]

@@ -199,231 +199,106 @@
         </div>
       </section>
 
-      <section id="projects" class="mt-16">
+      <section
+        id="projects"
+        x-data="{ projects: [] }"
+        x-init="projects = await (await fetch ('/assets/data/projects.json')).json()"
+        class="mt-16"
+      >
         <a href="#projects">#projects</a>
-        <div
-          class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container"
-        >
-          <div class="lg:col-span-2 xl:col-span-1">
-            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
-            <div class="flex justify-center lg:hidden relative">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+        <div class="grid gap-5">
+          <template x-for="(project, index) in projects">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container"
+            >
+              <div
+                class="lg:col-span-2 xl:col-span-1"
+                :class="{ 'order-2 pl-3 xl:pl-0': index % 2 === 1 }"
               >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
-              </svg>
-              <img
-                src="https://picsum.photos/520/290?random=1"
-                width="520"
-                height="290"
-                alt=""
-                class="my-2 img-container -rotate-2 grayscale"
-              />
-            </div>
-            <p class="mt-5">
-              Digital library landing page design with a modern and clean
-              layout, this page features a striking hero section with a bold
-              call-to-action, along with easy-to-scan service descriptions,
-              reviews, and location sections.
-            </p>
-            <div class="mt-5">
-              <b>Built with</b> <br />
-              <a href="/projects?tag=laravel" class="underline">#laravel</a>
-              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
-            </div>
-          </div>
-          <div class="hidden lg:flex justify-end">
-            <div class="img-container -rotate-2 relative flex justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                <a
+                  :href="`/projects/${project.id}`"
+                  x-text="project.name"
+                  class="font-bold underline"
+                ></a>
+                <div class="flex justify-center lg:hidden relative">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                    />
+                    <path d="M9 15l-4.5 4.5" />
+                    <path d="M14.5 4l5.5 5.5" />
+                  </svg>
+                  <img
+                    :src="project.image"
+                    width="520"
+                    height="290"
+                    alt="thumbnail"
+                    class="my-2 img-container -rotate-2 grayscale"
+                  />
+                </div>
+                <p class="mt-5" x-text="project.description"></p>
+                <div class="mt-5">
+                  <b>Built with</b>
+                  <div>
+                    <template x-for="tech in project.tech">
+                      <a
+                        :href="`/projects?tech=${tech}`"
+                        x-text="`#${tech}`"
+                        class="underline inline-block mr-3"
+                      ></a>
+                    </template>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="hidden lg:flex"
+                :class="index % 2 === 1 ? 'justify-start' : 'justify-end'"
               >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
-              </svg>
-              <img
-                src="https://picsum.photos/520/290?random=1"
-                width="520"
-                height="290"
-                alt=""
-                class="grayscale rotate-1"
-              />
+                <div
+                  class="img-container relative flex justify-center h-fit"
+                  :class="index % 2 === 1 ? 'rotate-2' : '-rotate-2'"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                    />
+                    <path d="M9 15l-4.5 4.5" />
+                    <path d="M14.5 4l5.5 5.5" />
+                  </svg>
+                  <img
+                    :src="project.image"
+                    width="520"
+                    height="290"
+                    alt="thumbnail"
+                    class="grayscale"
+                    :class="index % 2 === 1 ? '-rotate-1' : 'rotate-1'"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div
-          class="mt-5 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container"
-        >
-          <!-- reverse: order-2 pl-3 xl:pl-0 -->
-          <div class="lg:col-span-2 order-2 pl-3 xl:pl-0 xl:col-span-1">
-            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
-            <div class="flex justify-center lg:hidden relative">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
-              </svg>
-              <img
-                src="https://picsum.photos/520/290?random=2"
-                width="520"
-                height="290"
-                alt=""
-                class="my-2 img-container rotate-2 grayscale"
-              />
-            </div>
-            <p class="mt-5">
-              Digital library landing page design with a modern and clean
-              layout, this page features a striking hero section with a bold
-              call-to-action, along with easy-to-scan service descriptions,
-              reviews, and location sections.
-            </p>
-            <div class="mt-5">
-              <b>Built with</b> <br />
-              <a href="/projects?tag=laravel" class="underline">#laravel</a>
-              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
-            </div>
-          </div>
-          <!-- reverse: justify-start -->
-          <div class="hidden lg:flex justify-start">
-            <div class="img-container rotate-2 relative flex justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
-              </svg>
-              <img
-                src="https://picsum.photos/520/290?random=2"
-                width="520"
-                height="290"
-                alt=""
-                class="grayscale -rotate-1"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="mt-5 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container"
-        >
-          <div class="lg:col-span-2 xl:col-span-1">
-            <a href="/projects/lidia" class="font-bold underline">Lidia</a>
-            <div class="flex justify-center lg:hidden relative">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
-              </svg>
-              <img
-                src="https://picsum.photos/520/290?random=3"
-                width="520"
-                height="290"
-                alt=""
-                class="my-2 img-container -rotate-2 grayscale"
-              />
-            </div>
-            <p class="mt-5">
-              Digital library landing page design with a modern and clean
-              layout, this page features a striking hero section with a bold
-              call-to-action, along with easy-to-scan service descriptions,
-              reviews, and location sections.
-            </p>
-            <div class="mt-5">
-              <b>Built with</b> <br />
-              <a href="/projects?tag=laravel" class="underline">#laravel</a>
-              <a href="/projects?tag=vuejs" class="underline">#vuejs</a>
-            </div>
-          </div>
-          <div class="hidden lg:flex justify-end">
-            <div class="img-container -rotate-2 relative flex justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                />
-                <path d="M9 15l-4.5 4.5" />
-                <path d="M14.5 4l5.5 5.5" />
-              </svg>
-              <img
-                src="https://picsum.photos/520/290?random=3"
-                width="520"
-                height="290"
-                alt=""
-                class="grayscale rotate-1"
-              />
-            </div>
-          </div>
+          </template>
         </div>
       </section>
 
