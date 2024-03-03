@@ -244,7 +244,8 @@
                     width="520"
                     height="290"
                     alt="thumbnail"
-                    class="my-2 img-container -rotate-2 grayscale"
+                    class="my-2 img-container grayscale"
+                    :class="index % 2 === 1 ? 'rotate-2' : '-rotate-2'"
                   />
                 </div>
                 <p class="mt-5" x-text="project.description"></p>
