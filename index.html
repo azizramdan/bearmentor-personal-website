@@ -303,207 +303,70 @@
         </div>
       </section>
 
-      <section id="writings" class="mt-16">
+      <section
+        id="writings"
+        x-data="{ writings: [] }"
+        x-init="writings = await (await fetch ('/assets/data/writings.json')).json()"
+        class="mt-16"
+      >
         <a href="#writings">#writings</a>
         <div
           class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 xl:gap-x-40 2xl:gap-x-60 lg:px-2 gap-y-10"
         >
-          <div class="section-container -rotate-1">
-            <div class="rotate-1">
-              <div class="flex justify-center relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+          <template x-for="(writing, index) in writings">
+            <div
+              class="section-container"
+              :class="index % 2 === 1 ? 'rotate-1' : '-rotate-1'"
+            >
+              <div :class="index % 2 === 1 ? '-rotate-1' : 'rotate-1'">
+                <div class="flex justify-center relative">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
+                    />
+                    <path d="M9 15l-4.5 4.5" />
+                    <path d="M14.5 4l5.5 5.5" />
+                  </svg>
+                  <img
+                    :src="writing.image"
+                    width="550"
+                    height="265"
+                    alt="thumbnail"
+                    class="flex-1 grayscale"
                   />
-                  <path d="M9 15l-4.5 4.5" />
-                  <path d="M14.5 4l5.5 5.5" />
-                </svg>
-                <img
-                  src="https://picsum.photos/550/265?random=1"
-                  width="550"
-                  height="265"
-                  alt=""
-                  class="flex-1 grayscale"
-                />
-              </div>
-              <div class="p-3">
-                <a href="/writings/1" class="mt-3 block underline font-bold"
-                  >Immutable array updates with Array.prototype.with</a
-                >
-                <small class="block mt-2">-February 6, 2024</small>
-                <div class="mt-2">
-                  <a href="/writings?tag=javascript" class="underline"
-                    ><small>#javascript</small></a
-                  >
-                  <a href="/writings?tag=typescript" class="underline"
-                    ><small>#typescript</small></a
-                  >
                 </div>
-                <p class="mt-5">
-                  Learn how to use this new method to update an array without
-                  mutating the original array.
-                </p>
+                <div class="p-3">
+                  <a
+                    :href="`/writings/${writing.id}`"
+                    x-text="writing.title"
+                    class="mt-3 block underline font-bold"
+                  ></a>
+                  <small class="block mt-2" x-text="`-${writing.date}`"></small>
+                  <div class="mt-2">
+                    <template x-for="tag in writing.tags">
+                      <a
+                        :href="`/writings?tag=${tag}`"
+                        class="underline inline-block mr-3"
+                        ><small x-text="`#${tag}`"></small
+                      ></a>
+                    </template>
+                  </div>
+                  <p class="mt-5" x-text="writing.description"></p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="section-container rotate-1">
-            <div class="-rotate-1">
-              <div class="flex justify-center relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                  />
-                  <path d="M9 15l-4.5 4.5" />
-                  <path d="M14.5 4l5.5 5.5" />
-                </svg>
-                <img
-                  src="https://picsum.photos/550/265?random=2"
-                  width="550"
-                  height="265"
-                  alt=""
-                  class="flex-1 grayscale"
-                />
-              </div>
-              <div class="p-3">
-                <a href="/writings/1" class="mt-3 block underline font-bold"
-                  >Immutable array updates with Array.prototype.with</a
-                >
-                <small class="block mt-2">-February 6, 2024</small>
-                <div class="mt-2">
-                  <a href="/writings?tag=javascript" class="underline"
-                    ><small>#javascript</small></a
-                  >
-                  <a href="/writings?tag=typescript" class="underline"
-                    ><small>#typescript</small></a
-                  >
-                </div>
-                <p class="mt-5">
-                  Learn how to use this new method to update an array without
-                  mutating the original array.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="section-container -rotate-1">
-            <div class="rotate-1">
-              <div class="flex justify-center relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                  />
-                  <path d="M9 15l-4.5 4.5" />
-                  <path d="M14.5 4l5.5 5.5" />
-                </svg>
-                <img
-                  src="https://picsum.photos/550/265?random=3"
-                  width="550"
-                  height="265"
-                  alt=""
-                  class="flex-1 grayscale"
-                />
-              </div>
-              <div class="p-3">
-                <a href="/writings/1" class="mt-3 block underline font-bold"
-                  >Immutable array updates with Array.prototype.with</a
-                >
-                <small class="block mt-2">-February 6, 2024</small>
-                <div class="mt-2">
-                  <a href="/writings?tag=javascript" class="underline"
-                    ><small>#javascript</small></a
-                  >
-                  <a href="/writings?tag=typescript" class="underline"
-                    ><small>#typescript</small></a
-                  >
-                </div>
-                <p class="mt-5">
-                  Learn how to use this new method to update an array without
-                  mutating the original array.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="section-container rotate-1">
-            <div class="-rotate-1">
-              <div class="flex justify-center relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-pin absolute z-10 -top-5 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path
-                    d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                  />
-                  <path d="M9 15l-4.5 4.5" />
-                  <path d="M14.5 4l5.5 5.5" />
-                </svg>
-                <img
-                  src="https://picsum.photos/550/265?random=4"
-                  width="550"
-                  height="265"
-                  alt=""
-                  class="flex-1 grayscale"
-                />
-              </div>
-              <div class="p-3">
-                <a href="/writings/1" class="mt-3 block underline font-bold"
-                  >Immutable array updates with Array.prototype.with</a
-                >
-                <small class="block mt-2">-February 6, 2024</small>
-                <div class="mt-2">
-                  <a href="/writings?tag=javascript" class="underline"
-                    ><small>#javascript</small></a
-                  >
-                  <a href="/writings?tag=typescript" class="underline"
-                    ><small>#typescript</small></a
-                  >
-                </div>
-                <p class="mt-5">
-                  Learn how to use this new method to update an array without
-                  mutating the original array.
-                </p>
-              </div>
-            </div>
-          </div>
+          </template>
         </div>
       </section>
 
