@@ -1,44 +1,38 @@
 [
   {
     "id": 1,
-    "title": "The Lean Startup",
-    "image": "https://picsum.photos/320/512?random=1",
-    "tags": ["book", "lean", "startup"],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem."
+    "cover": "https://santrikoding.com/storage/courses/48a53e1c-e8ee-4c96-b884-f8257236364a.webp",
+    "tags": ["laravel", "inertia.js", "react", "tailwind"],
+    "url": "https://santrikoding.com/ebook/membangun-website-forum-dengan-laravel-inertia-react-tailwindcss"
   },
   {
     "id": 2,
-    "title": "The Lean Startup",
-    "image": "https://picsum.photos/320/512?random=2",
-    "tags": ["book", "lean", "startup"],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem."
+    "cover": "https://santrikoding.com/storage/courses/43fd6618-047e-4d5f-b7e0-3d37c134c493.webp",
+    "tags": ["laravel", "react"],
+    "url": "https://santrikoding.com/ebook/membangun-smart-home-system-dengan-laravel-react-native-dan-nodemcu"
   },
   {
     "id": 3,
-    "title": "The Lean Startup",
-    "image": "https://picsum.photos/320/512?random=3",
-    "tags": ["book", "lean", "startup"],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem."
+    "cover": "https://santrikoding.com/storage/courses/d57886e7-c97d-4b4c-8651-6843ebc3261b.webp",
+    "tags": ["laravel", "react"],
+    "url": "https://santrikoding.com/ebook/membangun-website-dan-aplikasi-android-desa-dengan-laravel-reactjs-dan-react-native"
   },
   {
     "id": 4,
-    "title": "The Lean Startup",
-    "image": "https://picsum.photos/320/512?random=4",
-    "tags": ["book", "lean", "startup"],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem."
+    "cover": "https://santrikoding.com/storage/courses/59deba93-5360-4449-9b29-85639c4eb4e1.webp",
+    "tags": ["laravel", "react", "android"],
+    "url": "https://santrikoding.com/ebook/membangun-aplikasi-dan-website-news-dengan-laravel-reactjs-dan-android"
   },
   {
     "id": 5,
-    "title": "The Lean Startup",
-    "image": "https://picsum.photos/320/512?random=5",
-    "tags": ["book", "lean", "startup"],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem."
+    "cover": "https://santrikoding.com/storage/courses/aae1d9ed-abce-4415-84bb-59d976d26dd6.webp",
+    "tags": ["laravel", "alpine.js", "tailwind"],
+    "url": "https://santrikoding.com/ebook/membangun-website-online-course-dengan-laravel-alpinejs-dan-tailwind-css"
   },
   {
     "id": 6,
-    "title": "The Lean Startup",
-    "image": "https://picsum.photos/320/512?random=6",
-    "tags": ["book", "lean", "startup"],
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem."
+    "cover": "https://santrikoding.com/storage/courses/c18a9aeb-db6e-4637-b2d3-19bbe328e147.webp",
+    "tags": ["laravel", "inertia.js", "react"],
+    "url": "https://santrikoding.com/ebook/membangun-website-toko-online-dengan-laravel-inertiajs-reactjs"
   }
 ]

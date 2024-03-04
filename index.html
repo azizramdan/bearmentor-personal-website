@@ -297,18 +297,20 @@
         <a href="#ebooks">#ebooks</a>
         <div class="flex flex-wrap justify-center gap-8">
           <template x-for="ebook in ebooks">
-            <a :href="`/ebooks/${ebook.id}`" class="section-container relative">
+            <a :href="ebook.url" class="group section-container relative">
               <img
-                :src="ebook.image"
+                :src="ebook.cover"
                 width="320"
                 height="512"
                 alt="thumbnail"
                 class="grayscale"
               />
-              <div class="absolute px-1 bottom-0 bg-black opacity-75 w-full">
+              <div
+                class="absolute px-1 bottom-0 bg-black opacity-75 w-full hidden group-hover:block"
+              >
                 <template x-for="tag in ebook.tags">
                   <a
-                    :href="`/ebooks?tag=${tag}`"
+                    :href="`https://santrikoding.com/ebook?technology[]=${tag}`"
                     class="underline inline-block mr-3 text-white"
                     ><small x-text="`#${tag}`"></small
                   ></a>
