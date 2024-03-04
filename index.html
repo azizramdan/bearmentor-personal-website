@@ -228,66 +228,18 @@
         <a href="#projects">#projects</a>
         <div class="grid gap-5">
           <template x-for="(project, index) in projects">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-2 p-6 section-container"
-            >
+            <div class="p-3 md:p-6 section-container flex flex-col lg:block">
+              <a
+                :href="`/projects/${project.id}`"
+                x-text="project.name"
+                class="font-bold underline order-1 lg:order-2"
+              ></a>
               <div
-                class="lg:col-span-2 xl:col-span-1"
-                :class="{ 'order-2 pl-3 xl:pl-0': index % 2 === 1 }"
-              >
-                <a
-                  :href="`/projects/${project.id}`"
-                  x-text="project.name"
-                  class="font-bold underline"
-                ></a>
-                <div class="flex justify-center lg:hidden relative">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="icon icon-tabler icon-tabler-pin absolute z-10 -top-3 stroke-black dark:stroke-[#f5f5f5] fill-white dark:fill-[#171717]"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path
-                      d="M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4"
-                    />
-                    <path d="M9 15l-4.5 4.5" />
-                    <path d="M14.5 4l5.5 5.5" />
-                  </svg>
-                  <img
-                    :src="project.image"
-                    width="520"
-                    height="290"
-                    alt="thumbnail"
-                    class="my-2 img-container grayscale"
-                    :class="index % 2 === 1 ? 'rotate-2' : '-rotate-2'"
-                  />
-                </div>
-                <p class="mt-5" x-text="project.description"></p>
-                <div class="mt-5">
-                  <b>Built with</b>
-                  <div>
-                    <template x-for="tech in project.tech">
-                      <a
-                        :href="`/projects?tech=${tech}`"
-                        x-text="`#${tech}`"
-                        class="underline inline-block mr-3"
-                      ></a>
-                    </template>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="hidden lg:flex"
-                :class="index % 2 === 1 ? 'justify-start' : 'justify-end'"
+                class="w-full lg:w-[400px] xl:w-fit mt-3 lg:mt-0 lg:mb-4 flex justify-center order-2 lg:order-1"
+                :class="index % 2 === 1 ? 'float-left lg:mr-5' : 'float-right lg:ml-4'"
               >
                 <div
-                  class="img-container relative flex justify-center h-fit"
+                  class="img-container relative flex justify-center w-fit"
                   :class="index % 2 === 1 ? 'rotate-2' : '-rotate-2'"
                 >
                   <svg
@@ -310,12 +262,25 @@
                   </svg>
                   <img
                     :src="project.image"
+                    alt="thumbnail"
                     width="520"
                     height="290"
-                    alt="thumbnail"
                     class="grayscale"
                     :class="index % 2 === 1 ? '-rotate-1' : 'rotate-1'"
                   />
+                </div>
+              </div>
+              <div class="mt-5 order-3" x-text="project.description"></div>
+              <div class="mt-5 order-4">
+                <b>Built with</b>
+                <div>
+                  <template x-for="tech in project.tech">
+                    <a
+                      :href="`/projects?tech=${tech}`"
+                      x-text="`#${tech}`"
+                      class="underline inline-block mr-3"
+                    ></a>
+                  </template>
                 </div>
               </div>
             </div>
