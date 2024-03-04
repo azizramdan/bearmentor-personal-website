@@ -289,6 +289,37 @@
       </section>
 
       <section
+        id="ebooks"
+        x-data="{ ebooks: [] }"
+        x-init="ebooks = await (await fetch ('/assets/data/ebooks.json')).json()"
+        class="mt-16"
+      >
+        <a href="#ebooks">#ebooks</a>
+        <div class="flex flex-wrap justify-center gap-8">
+          <template x-for="ebook in ebooks">
+            <a :href="`/ebooks/${ebook.id}`" class="section-container relative">
+              <img
+                :src="ebook.image"
+                width="320"
+                height="512"
+                alt="thumbnail"
+                class="grayscale"
+              />
+              <div class="absolute px-1 bottom-0 bg-black opacity-75 w-full">
+                <template x-for="tag in ebook.tags">
+                  <a
+                    :href="`/ebooks?tag=${tag}`"
+                    class="underline inline-block mr-3 text-white"
+                    ><small x-text="`#${tag}`"></small
+                  ></a>
+                </template>
+              </div>
+            </a>
+          </template>
+        </div>
+      </section>
+
+      <section
         id="writings"
         x-data="{ writings: [] }"
         x-init="writings = await (await fetch ('/assets/data/writings.json')).json()"
