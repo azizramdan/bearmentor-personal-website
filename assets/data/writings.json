@@ -1,34 +1,38 @@
 [
   {
     "id": 1,
-    "title": "Immutable array updates with Array.prototype.with",
-    "date": "February 6, 2024",
-    "tags": ["javascript", "typescript", "array"],
-    "description": "Learn how to use this new method to update an array without mutating the original array.",
-    "image": "https://picsum.photos/550/265?random=1"
+    "title": "5 Essential Practices for Front-End Developers (React Edition)",
+    "date": "March 4, 2024",
+    "tags": ["webdev", "javascript", "beginners", "react"],
+    "description": "Embarking on a new professional journey is often accompanied by excitement and high expectations. However, the reality can be starkly different when faced with a codebase resembling a chaotic puzzle.",
+    "image": "https://picsum.photos/550/265?random=1",
+    "url": "https://dev.to/sufian/5-essential-practices-for-front-end-developers-react-edition-3h96"
   },
   {
     "id": 2,
-    "title": "Immutable array updates with Array.prototype.with",
-    "date": "February 6, 2024",
-    "tags": ["javascript", "typescript", "array"],
-    "description": "Learn how to use this new method to update an array without mutating the original array.",
-    "image": "https://picsum.photos/550/265?random=2"
+    "title": "SOLID Principle in NextJS using Typescript",
+    "date": "March 4, 2024",
+    "tags": ["webdev", "typescript", "nextjs", "solidprinciples"],
+    "description": "SOLID is an acronym for five key principles of object-oriented programming that aim to improve the readability, maintainability, extensibility, and testability of code. However, SOLID principles are not limited to object-oriented programming that uses classes.",
+    "image": "https://picsum.photos/550/265?random=2",
+    "url": "https://dev.to/fajarriv/solid-principle-in-nextjs-using-typescript-3l3k"
   },
   {
     "id": 3,
-    "title": "Immutable array updates with Array.prototype.with",
-    "date": "February 6, 2024",
-    "tags": ["javascript", "typescript", "array"],
-    "description": "Learn how to use this new method to update an array without mutating the original array.",
-    "image": "https://picsum.photos/550/265?random=3"
+    "title": "Let's talk of Reactive Architecture",
+    "date": "March 4, 2024",
+    "tags": ["architecture", "design", "softwaredevelopment", "devops"],
+    "description": "Let's imagine a world where we build applications not only with the aim of these working well but also handling a lot of users smoothly, even when things get busy. That's what Reactive Architecture is all about. It's just like creating a smart system that knows how to manage lots of information at once, without slowing down or crashing.",
+    "image": "https://picsum.photos/550/265?random=3",
+    "url": "https://dev.to/yokwejuste/lets-talk-of-reactive-architecture-1j60"
   },
   {
     "id": 4,
-    "title": "Immutable array updates with Array.prototype.with",
-    "date": "February 6, 2024",
-    "tags": ["javascript", "typescript", "array"],
-    "description": "Learn how to use this new method to update an array without mutating the original array.",
-    "image": "https://picsum.photos/550/265?random=4"
+    "title": "Things I learned while building my Component Library",
+    "date": "March 4, 2024",
+    "tags": ["javascript", "webdev", "react", "opensource"],
+    "description": "Component libraries have changed how we build applications. It gives us the essential building blocks to develop an application's UI while hiding all the complicated logic from us to achieve that behavior. And the funny part is, the majority of the developers don't understand what is happening behind the scenes.",
+    "image": "https://picsum.photos/550/265?random=4",
+    "url": "https://dev.to/mathuraditya7/things-i-learned-while-building-my-component-library-1pmc"
   }
 ]
