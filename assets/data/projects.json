@@ -8,15 +8,15 @@
   },
   {
     "id": 2,
-    "name": "Lidia",
-    "description": "Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service description, reviews, and location sections.",
+    "name": "Al Nasr",
+    "description": "A beautifully designed website for al hajj and umrah travel agency. This design features a stunning hero section with an eye-catching image, services, packages, airways accomadation, facilities, testimonials, and gallery. This design is perfect for any travel agency looking to attract new customers and take their business to new heights!. To begin the challenge, you will first need to download the design file from the provided link. This will give you access to all of the necessary design elements and assets that you will need to complete the challenge.",
     "tech": ["laravel", "vuejs", "tailwindcss"],
     "image": "https://picsum.photos/520/290?random=2"
   },
   {
     "id": 3,
-    "name": "Lidia",
-    "description": "Digital library landing page design with a modern and clean layout, this page features a striking hero section with a bold call-to-action, along with easy-to-scan service description, reviews, and location sections.",
+    "name": "DressLy",
+    "description": "Introducing our latest fashion landing website design! This captivating design includes a stunning hero section with an eye-catching image, a partner section featuring prestigious brands, a carefully curated top selection section, a showcase of our best-selling items, an easy-to-follow 'How to Order' section, and a newsletter sign-up to stay updated with the latest trends and exclusive offers.",
     "tech": ["laravel", "vuejs", "tailwindcss"],
     "image": "https://picsum.photos/520/290?random=3"
   }
